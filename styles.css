@@ -1,0 +1,343 @@
+/********************************************
+ * 1. VARIABLES CSS - Colores cálidos
+ ********************************************/
+ :root {
+  --color-primary: #5fbfff; 
+  --color-secondary: #72c5fc; 
+  --color-accent: #fc74c8;   
+  --color-accent-hover: #9d85d7;  
+  --color-border: #432888;
+  --font-primary: 'Monaco', monospace;
+  --font-fancy: 'Arial', sans-serif;
+  --color-links: #432888; 
+  --title-size: clamp(1.5rem, 5vw, 3rem);
+  --container-width: calc(100% - 2rem);
+}
+
+/********************************************
+* 2. BODY - Gradiente ligero
+********************************************/
+body {
+  background: linear-gradient(to bottom, var(--color-primary), var(--color-secondary));
+  font-family: var(--font-primary);
+}
+
+/********************************************
+* 3. CARDS - Forma cuadrada + focus
+********************************************/
+.card {
+  display: flex; /* Uso de Flexbox para alinear elementos */
+  flex-direction: column; /* Alineación vertical */
+  justify-content: center; /* Centrado vertical */
+  align-items: center; /* Centrado horizontal */
+  margin: 1rem;
+  background-color: var(--color-primary);
+  border: 2px solid var(--color-secondary);
+  border-radius: 5px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transición suave */
+}
+
+.card:focus,
+.card:hover {
+  transform: scale(1.05); /* Efecto de escala al hacer hover */
+  background-color: #fd82ce !important;
+}
+
+/********************************************
+* 4. FOOTER - Ocupa todo el ancho + bordes en hover
+********************************************/
+#footer {
+  width: 100%;
+  text-align: center;
+  padding: 1rem;
+  background-color: var(--color-accent);
+  border: 5px solid var(--color-border);
+  color: var(--color-border);
+  transition: border 0.3s ease; /* Transición suave del borde */
+}
+
+/********************************************
+* 5. TÍTULOS Y TEXTOS
+********************************************/
+#main-title {
+  color: var(--color-accent);
+  animation: bounce 1s infinite; /* Animación de rebote */
+}
+
+h1 {
+  font-family: var(--font-primary);
+  text-shadow: 0px 0px 5px var(--color-border), 
+               0px 0px 10px var(--color-border),
+               0px 0px 15px var(--color-border);
+}
+
+h2, h3, h4 {
+  font-weight: bold;
+  font-family: var(--font-fancy);
+  line-height: 1.5;
+}
+
+p {
+  font-size: 1.5rem;
+  line-height: 1.6;
+}
+
+li {
+  font-size: 1.3rem;
+  line-height: 1.6;
+}
+
+/********************************************
+* 6. NAVBAR - Estilos y efectos
+********************************************/
+.navbar {
+  background-color: #fd82ce;
+  font-size: 1.5rem;
+  margin-left: 3%;
+  width: 90%;
+  border: 1px solid #fff;
+}
+
+.navbar-brand[href^="#"] {
+  padding-left: 1%;
+  font-size: 1.5rem;
+}
+
+.navbar-nav .nav-link {
+  font-size: 1.5rem;
+  padding: 0.5rem 1rem;
+}
+
+.nav-link {
+  font-size: 1.5rem;
+}
+
+.nav-link:hover {
+  color: var(--color-primary); /* Cambio de color al hacer hover */
+}
+
+/********************************************
+* 7. BOTONES Y FORMULARIOS
+********************************************/
+.button {
+  background-color: #ffb3c9;
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  color: #fff;
+  font-weight: bold;
+  transition: background-color 0.4s ease; /* Transición suave */
+}
+
+button[type="submit"] {
+  background-color: var(--color-accent);
+  border: 0.2rem solid;
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  color: #fff;
+  border-color: #fff;
+  font-weight: bold;
+  transition: background-color 0.4s ease; /* Transición suave */
+  align-self: center;
+  display: block;
+  margin: 0 auto;
+}
+
+button[type="submit"]:hover {
+  background-color: var(--color-primary); /* Cambio de color al hacer hover */
+  border-color: #fff;
+}
+
+/********************************************
+* 8. TABLAS
+********************************************/
+.table th {
+  background-color: #806bb2;
+  border: 1px solid #000;
+  padding: 10px;
+  text-align: center;
+}
+
+.table td {
+  background-color: var(--color-primary);
+  border: 1px solid #000;
+  padding: 10px;
+  text-align: center;
+  transition: transform 0.3s ease; /* Transición suave */
+}
+
+.table td:hover {
+  background-color: var(--color-accent); /* Cambio de color al hacer hover */
+}
+
+/********************************************
+* 9. ANIMACIONES Y EFECTOS
+********************************************/
+@keyframes bounce {
+  0%, 100% {
+      transform: translateY(0);
+  }
+  50% {
+      transform: translateY(-10px);
+  }
+}
+
+@keyframes shake {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  50% { transform: translateX(5px); }
+  75% { transform: translateX(-5px); }
+  100% { transform: translateX(0); }
+}
+
+img:hover {
+  animation: shake 0.5s ease; /* Animación de sacudida al hacer hover */
+}
+
+/********************************************
+* 10. INPUTS Y FORMULARIOS
+********************************************/
+#mensaje, input[type="email"], input[type="text"] {
+  background-color: var(--color-primary);
+  border: 2px solid #ccc;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 1rem;
+  width: 100%;
+  transition: all 0.3s ease; /* Transición suave */
+}
+
+input[type="text"]:hover {
+  border-color: var(--color-border); /* Cambio de borde al hacer hover */
+  background-color: rgba(238, 213, 247, 0.1);
+}
+
+input[type="email"]:hover {
+  border-color: var(--color-primary); /* Cambio de borde al hacer hover */
+  background-color: rgba(255, 152, 0, 0.1);
+}
+
+#mensaje:hover {
+  border-color: var(--color-accent); /* Cambio de borde al hacer hover */
+  background-color: rgba(255, 152, 0, 0.1);
+}
+
+input[type="radio"], label {
+  transition: transform 0.2s ease, box-shadow 0.2s ease; /* Transición suave */
+}
+
+input[type="radio"]:hover, label:hover {
+  transform: scale(1.2); /* Efecto de escala al hacer hover */
+  box-shadow: 0 0 8px var(--color-accent);
+}
+
+/********************************************
+* 11. ELEMENTOS ESPECÍFICOS
+********************************************/
+#music {
+  display: flex; /* Uso de Flexbox para alinear elementos */
+  flex-direction: column; /* Alineación vertical */
+  justify-content: center; /* Centrado vertical */
+  align-items: center; /* Centrado horizontal */
+  text-align: center;
+}
+
+#presentation {
+  display: inline-block;
+  width: 80%;
+  border: 3px solid var(--color-border);
+  border-radius: 4rem;
+  font-size: 1.5rem;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+#presentation::after,
+#presentation::before {
+  content: " 👾"; /* Uso de pseudo-elementos after y before */
+}
+
+.list::after {
+  content: " 🤖"; /* Uso de pseudo-elemento after */
+}
+
+#languages-title::after {
+  content: " 📖"; /* Uso de pseudo-elemento after */
+}
+
+#reach::before {
+  content: "📫"; /* Uso de pseudo-elemento before */
+}
+
+/********************************************
+* 12. ESTILOS ADICIONALES
+********************************************/
+.container.mt-5 {
+  border: 2px solid var(--color-border);
+  border-radius: 3rem;
+  padding: 2%;
+  background-color: var(--color-accent);
+  transition: background-color 0.5s ease; /* Transición suave */
+}
+
+.container.mt-5:hover,
+.container.mt-5:focus-within {
+  background-color: var(--color-accent-hover); /* Cambio de color al hacer hover */
+}
+
+.btn {
+  background-color: var(--color-primary);
+  color: #fff;
+  transition: transform 0.3s ease; /* Transición suave */
+}
+
+.btn:hover {
+  background-color: var(--color-accent); /* Cambio de color al hacer hover */
+  color: #fff;
+}
+
+.link {
+  color: #fff;
+}
+
+.link:hover {
+  color: var(--color-links); /* Cambio de color al hacer hover */
+}
+
+/********************************************
+* 13. BANNER - Centrado de contenido
+********************************************/
+.banner {
+  display: flex; /* Uso de Flexbox para alinear elementos */
+  flex-direction: column; /* Alineación vertical */
+  justify-content: center; /* Centrado vertical */
+  align-items: center; /* Centrado horizontal */
+  text-align: center; /* Centrado de texto */
+  padding: 2rem; /* Espaciado interno */
+}
+
+#main-title {
+  margin-bottom: 1rem; /* Espacio entre el título y el párrafo */
+}
+
+#presentation {
+  max-width: 80%; /* Limita el ancho del párrafo */
+  margin: 0 auto; /* Centra el párrafo horizontalmente */
+}
+
+iframe {
+  margin-bottom: 2%;
+  width: 40vw; /* Usa unidades relativas a la ventana */
+  height: 35vw; /* Reduce la altura para darle más forma de cuadrado */
+  max-width: 70%; /* Limita el ancho máximo */
+  max-height: 60%; /* Limita la altura máxima */
+}
+
+.col-2{
+  margin-bottom: 2%;
+  margin-top: 2%;
+  max-height: 80px;
+}
+
+.ss-1 img {
+  width: 80%;  /* Se ajusta al ancho del contenedor */
+  height: 70%;
+}
